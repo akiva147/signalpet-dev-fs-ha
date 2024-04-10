@@ -1,4 +1,3 @@
-import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import ReportSection from "./ReportSection";
 import AddressInfoSection from "./AddressInfoSection";
 import ContactInfoSection from "./ContactInfoSection";
@@ -9,7 +8,6 @@ const styles = {
     container: {
         display: "flex",
         flexDirection: "row" as "row",
-        // justifyContent: "space-between",
         width: "90%",
     },
     segmentContainer: {
@@ -77,14 +75,14 @@ const ReportBasicInfoSection = () => {
                 <ReportFindings
                     isNormal={false}
                     editable={true}
-                    findings={require("../fetches/fetchAbnormalFindings.json")}
+                    // findings={require("../fetches/fetchAbnormalFindings.json")}
                 />
             </ReportSection>
             <ReportSection title="Normal Findings" secondaryText="Confidence">
                 <ReportFindings
                     isNormal={true}
                     editable={true}
-                    findings={require("../fetches/fetchNormalFindings.json")}
+                    // findings={require("../fetches/fetchNormalFindings.json")}
                 />
             </ReportSection>
         </div>

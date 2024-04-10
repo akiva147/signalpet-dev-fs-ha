@@ -2,6 +2,9 @@
 import React, { SetStateAction, type Dispatch, useState } from "react";
 import { Checkbox2 } from "./ui/checkbox";
 import { type Finding, type Findings } from "../models/finding";
+import { getRandomNumberInRange } from "../utils/numbers";
+import { selectRandomObjects } from "../utils/objects";
+import { randomXrayFinding } from "../utils/strings";
 
 const styles = {
     gap3: {
@@ -33,8 +36,33 @@ const styles = {
     },
 };
 
+const getFindings = (
+    isNormal: boolean,
+    quantityRange: [number, number],
+    generatedQuantityRange: [number, number]
+): Findings => {
+    let localFindings: Findings = [];
+    localFindings = localFindings.concat(
+        selectRandomObjects(
+            require(isNormal
+                ? "../fetches/fetchNormalFindings.json"
+                : "../fetches/fetchAbnormalFindings.json"),
+            getRandomNumberInRange(...quantityRange)
+        )
+    );
+
+    for (
+        let i = 0;
+        i < getRandomNumberInRange(...generatedQuantityRange);
+        i++
+    ) {
+        localFindings = localFindings.concat(randomXrayFinding(isNormal));
+    }
+    return localFindings;
+};
+
 interface ReportFindingsProps {
-    findings: Findings;
+    findings?: Findings;
     isNormal: boolean;
     editable: boolean;
 }
@@ -44,6 +72,7 @@ const ReportFindings = ({
     isNormal,
     editable,
 }: ReportFindingsProps): JSX.Element => {
+    findings = findings ? findings : getFindings(isNormal, [0, 7], [0, 5]);
     return (
         <div style={styles.gap3}>
             {findings.map((finding) =>

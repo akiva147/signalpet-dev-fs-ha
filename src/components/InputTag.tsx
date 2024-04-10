@@ -21,18 +21,18 @@ const styles = {
     editableContainer: {
         width: "80%",
         margin: "auto",
-        height: "5rem", // Equivalent to h-20
-        overflowY: "auto" as "auto", // Equivalent to overflow-y-auto
-        justifyContent: "flex-start", // Equivalent to justify-start
-        border: "1px solid", // Equivalent to border
-        borderRadius: "0.125rem", // Equivalent to rounded-sm
-        borderColor: "#E5E7EB", // Equivalent to border-sp-paper-border
-        fontSize: "0.875rem", // Equivalent to text-sm
-        resize: "none" as "none", // Equivalent to resize-none
-        padding: "0.5rem", // Equivalent to p-2
-        backgroundColor: "#EFF6FF", // Equivalent to bg-light-blue
-        borderStyle: "none", // Equivalent to border-none
-        color: "#000", // Equivalent to text-black
+        height: "5rem",
+        overflowY: "auto" as "auto",
+        justifyContent: "flex-start",
+        border: "1px solid",
+        borderRadius: "0.125rem",
+        borderColor: "#E5E7EB",
+        fontSize: "0.875rem",
+        resize: "none" as "none",
+        padding: "0.5rem",
+        backgroundColor: "#EFF6FF",
+        borderStyle: "none",
+        color: "#000",
         marginTop: "1%",
         marginBottom: "1%",
     },

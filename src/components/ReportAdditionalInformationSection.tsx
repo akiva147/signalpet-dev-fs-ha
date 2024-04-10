@@ -16,9 +16,7 @@ const ReportAdditionalInformationSection = () => {
     return (
         <div>
             <span style={styles.title}>Summary: </span>
-            <InputTag style={{ height: "5vh" }} editable={true}>
-                sumsusmsusmususumsumsumsum
-            </InputTag>
+            <InputTag editable={true}>sumsusmsusmususumsumsumsum</InputTag>
         </div>
     );
 };
