@@ -15,7 +15,7 @@ const styles = {
 
 const ReportAdditionalInformationSection = () => {
     return (
-        <div>
+        <div translate="yes">
             <span style={styles.title}>Summary: </span>
             <InputTag editable={true}>{generateXrayAnalysisSummary()}</InputTag>
         </div>

@@ -34,8 +34,12 @@ const ReportSection = (props: ReportSectionInterface) => {
     return (
         <div style={{ ...styles.container, ...style }}>
             <div style={styles.headerContainer}>
-                <span style={styles.titleText}>{title}</span>
-                <span style={styles.titleText}>{secondaryText}</span>
+                <span style={styles.titleText} translate="yes">
+                    {title}
+                </span>
+                <span style={styles.titleText} translate="yes">
+                    {secondaryText}
+                </span>
             </div>
             <div style={{ ...styles.childrenWrapper, ...contentWrapperStyle }}>
                 {children}

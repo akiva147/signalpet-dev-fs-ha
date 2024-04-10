@@ -44,11 +44,15 @@ const ReportBasicInfoSection = () => {
                             paddingRight: "31%",
                         }}
                     >
-                        <span style={styles.segmentTitle}>Service:</span>
+                        <span style={styles.segmentTitle} translate="yes">
+                            Service:
+                        </span>
                         <span style={styles.segmentContent}>SignalRAY</span>
                     </div>
                     <div style={styles.segmentContainer}>
-                        <span style={styles.segmentTitle}>Date:</span>
+                        <span style={styles.segmentTitle} translate="yes">
+                            Date:
+                        </span>
                         <span style={styles.segmentContent}>01-01-1994</span>
                     </div>
                 </div>

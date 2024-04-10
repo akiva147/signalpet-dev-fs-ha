@@ -23,7 +23,7 @@ const ReportHeader = () => {
                 src={require("../static/logo.png")}
                 style={styles.logo}
             />
-            <span style={styles.secondaryText}>
+            <span style={styles.secondaryText} translate="yes">
                 Instant Point-of-Care Radiology Results
             </span>
         </div>

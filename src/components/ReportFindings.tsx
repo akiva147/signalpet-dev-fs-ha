@@ -153,6 +153,7 @@ const ReportFinding = ({
                             ? "text-sp-dark-blue"
                             : "text-report-light-gray ",
                     }}
+                    translate="yes"
                 >{`${finding.name}`}</div>
             </div>
             <div style={styles.gap25}>
