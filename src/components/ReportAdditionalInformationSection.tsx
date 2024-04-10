@@ -1,4 +1,5 @@
 import InputTag from "./InputTag";
+import { generateXrayAnalysisSummary } from "../utils/strings";
 
 const styles = {
     title: {
@@ -16,7 +17,7 @@ const ReportAdditionalInformationSection = () => {
     return (
         <div>
             <span style={styles.title}>Summary: </span>
-            <InputTag editable={true}>sumsusmsusmususumsumsumsum</InputTag>
+            <InputTag editable={true}>{generateXrayAnalysisSummary()}</InputTag>
         </div>
     );
 };

@@ -72,18 +72,10 @@ const ReportBasicInfoSection = () => {
                 <ParentDetailsSection patientId={9} />
             </ReportSection>
             <ReportSection title="Abnormal Findings" secondaryText="Confidence">
-                <ReportFindings
-                    isNormal={false}
-                    editable={true}
-                    // findings={require("../fetches/fetchAbnormalFindings.json")}
-                />
+                <ReportFindings isNormal={false} editable={true} />
             </ReportSection>
             <ReportSection title="Normal Findings" secondaryText="Confidence">
-                <ReportFindings
-                    isNormal={true}
-                    editable={true}
-                    // findings={require("../fetches/fetchNormalFindings.json")}
-                />
+                <ReportFindings isNormal={true} editable={true} />
             </ReportSection>
         </div>
     );

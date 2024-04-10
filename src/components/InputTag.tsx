@@ -56,9 +56,8 @@ const InputTag = (props: InputTagInterface) => {
                 ...styles.editableContainer,
                 ...style,
             }}
-        >
-            {children}
-        </textarea>
+            defaultValue={children?.toString()}
+        ></textarea>
     ) : (
         <div style={{ ...styles.tagContainer, ...style }}>
             {icon}

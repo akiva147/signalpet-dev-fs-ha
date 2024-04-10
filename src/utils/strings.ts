@@ -197,3 +197,39 @@ export const randomXrayFinding = (isNormal: boolean): Finding => {
               subgroup: "bone",
           };
 };
+
+export const summarySentenceStructures = [
+    "The x-ray analysis revealed %s in the %s region, indicating possible %s.",
+    "An abnormal %s was detected during the x-ray analysis, suggesting %s in the %s area.",
+    "Signs of %s were observed in the x-ray, pointing towards %s near the %s.",
+    "The x-ray indicated the presence of a %s, along with %s in the %s region.",
+    "A %s near the %s was evident from the x-ray analysis, along with %s.",
+    "An area of concern highlighted in the x-ray was a %s near the %s, suggesting %s.",
+];
+
+export function generateXrayAnalysisSummary(): string {
+    // Array of sentence structures for the summary
+
+    // Randomly select sentence structure and medical terms
+    const randomSentenceStructure =
+        summarySentenceStructures[
+            Math.floor(Math.random() * summarySentenceStructures.length)
+        ];
+    const randomMedicalTerms = Array.from(
+        { length: 3 },
+        () => medicalTerms[Math.floor(Math.random() * medicalTerms.length)]
+    );
+
+    // Replace placeholders in the sentence structure with random medical terms
+    const summary = randomSentenceStructure.replace(
+        /%s/g,
+        () => randomMedicalTerms.pop() || ""
+    );
+
+    // Generate a random number of sentences (between 1 and 4)
+    const numberOfSentences = Math.floor(Math.random() * 4) + 1;
+    const sentences = new Array(numberOfSentences).fill(summary);
+
+    // Join sentences to form a paragraph
+    return sentences.join(" ");
+}
