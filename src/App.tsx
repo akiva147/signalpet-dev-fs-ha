@@ -4,6 +4,7 @@ import ReportHeader from "./components/ReportHeader";
 import ReportPage from "./components/ReportPage";
 import ReportSection from "./components/ReportSection";
 import ReportBasicInfoSection from "./components/ReportBasicInfoSection";
+import ReportAdditionalInformationSection from "./components/ReportAdditionalInformationSection";
 
 // page comp -> basic info, additional, images (?)
 // section comp -> report basic info, hospital details, patient details, abnormal findings, normal findings, summary
@@ -35,9 +36,8 @@ function App() {
                     <ReportBasicInfoSection />
                 </ReportPage>
                 <ReportPage>
-                    {/* <ReportA */}
                     <ReportSection title="Additional Information">
-                        <ReportSection title="Summary">summary</ReportSection>
+                        <ReportAdditionalInformationSection />
                     </ReportSection>
                 </ReportPage>
             </div>

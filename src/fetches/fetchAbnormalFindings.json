@@ -1,0 +1,47 @@
+[
+    {
+        "id": 110,
+        "isNormal": false,
+        "isAbnormal": true,
+        "isLikely": false,
+        "masks": [],
+        "imageIds": ["658db031f01067fc540e2023"],
+        "codeId": 17,
+        "abbreviation": "apf",
+        "description": "Assessment for one or more fractures of the appendicular skeleton",
+        "summary": "Interruption of the cortex is detected in an appendicular bone. Fractures may be caused by trauma or bone pathology. Additional views may be necessary to adequately assess for a fracture. \r\nDDx: Traumatic fracture, pathologic fracture, other",
+        "name": "Appendicular Bone Fracture",
+        "group": "musculoskeletal",
+        "subgroup": "bone"
+    },
+    {
+        "id": 111,
+        "isNormal": false,
+        "isAbnormal": true,
+        "isLikely": false,
+        "masks": [],
+        "imageIds": ["658db031f01067fc540e2023"],
+        "codeId": 723,
+        "abbreviation": "abl",
+        "description": "Assessment for a lytic and/or blastic bone lesion(s)",
+        "summary": "Presence of a lesion within bone that is lytic and/or blastic. Summation or overlap of structures, radiographic technique, or other disease processes may affect appearance of bone. Based on clinical signs, signalment, physical exam findings, etc., further diagnostics may be necessary to diagnose neoplasia, osteomyelitis, or other cause of the suspected lesion.\r\nDDx: Neoplasia, osteomyelitis, other",
+        "name": "Lytic and/or Blastic Bone Lesions",
+        "group": "musculoskeletal",
+        "subgroup": "bone"
+    },
+    {
+        "id": 109,
+        "isNormal": false,
+        "isAbnormal": true,
+        "isLikely": false,
+        "masks": [],
+        "imageIds": ["658db031f01067fc540e2023"],
+        "codeId": 16,
+        "abbreviation": "pfx",
+        "description": "Assessment for a fracture of one or more bones of the pelvis",
+        "summary": "An abnormal signal indicates the presence of a disruption of cortex in one or more bones of the pelvis. Fractures may be caused by trauma or bone pathology. Treatment options should be determined depending on location, chronicity, clinical signs, etc.\r\nDDx: Traumatic fracture, pathologic fracture, other",
+        "name": "Pelvic Fracture",
+        "group": "musculoskeletal",
+        "subgroup": "pelvis"
+    }
+]

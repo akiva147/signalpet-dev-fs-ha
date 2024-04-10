@@ -3,6 +3,7 @@ import ReportSection from "./ReportSection";
 import AddressInfoSection from "./AddressInfoSection";
 import ContactInfoSection from "./ContactInfoSection";
 import ParentDetailsSection from "./ParentDetailsSection";
+import ReportFindings from "./ReportFindings";
 
 const styles = {
     container: {
@@ -71,6 +72,20 @@ const ReportBasicInfoSection = () => {
             </ReportSection>
             <ReportSection title="Patient Details">
                 <ParentDetailsSection patientId={9} />
+            </ReportSection>
+            <ReportSection title="Abnormal Findings" secondaryText="Confidence">
+                <ReportFindings
+                    isNormal={false}
+                    editable={true}
+                    findings={require("../fetches/fetchAbnormalFindings.json")}
+                />
+            </ReportSection>
+            <ReportSection title="Normal Findings" secondaryText="Confidence">
+                <ReportFindings
+                    isNormal={true}
+                    editable={true}
+                    findings={require("../fetches/fetchNormalFindings.json")}
+                />
             </ReportSection>
         </div>
     );

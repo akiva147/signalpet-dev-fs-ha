@@ -16,6 +16,8 @@ const styles = {
         backgroundColor: "#064c60",
         display: "flex",
         justifyContent: "space-between",
+        paddingLeft: "1%",
+        paddingRight: "3%",
     },
     titleText: {
         color: "#fff",
