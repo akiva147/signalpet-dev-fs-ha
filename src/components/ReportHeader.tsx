@@ -1,3 +1,5 @@
+import { reportHeader } from "../utils/constants";
+
 const styles = {
     container: {
         backgroundColor: "#064c60",
@@ -24,7 +26,7 @@ const ReportHeader = () => {
                 style={styles.logo}
             />
             <span style={styles.secondaryText} translate="yes">
-                Instant Point-of-Care Radiology Results
+                {reportHeader.secondaryText}
             </span>
         </div>
     );

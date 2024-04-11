@@ -3,6 +3,7 @@ import InputTag from "./InputTag";
 import { PatientDetailsModel, patientId } from "../models/patientDetails";
 import { convertToReadableString } from "../utils/strings";
 import { getRandomNumberInRange } from "../utils/numbers";
+import { loadingText } from "../utils/constants";
 
 const styles = {
     container: {
@@ -52,7 +53,7 @@ const ParentDetailsSection = (props: ParentDetailsSectionInterface) => {
                     </div>
                 ))
             ) : (
-                <span>Loading...</span>
+                <span translate="yes">{loadingText}</span>
             )}
         </div>
     );

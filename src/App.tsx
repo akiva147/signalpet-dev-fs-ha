@@ -5,9 +5,8 @@ import ReportPage from "./components/ReportPage";
 import ReportSection from "./components/ReportSection";
 import ReportBasicInfoSection from "./components/ReportBasicInfoSection";
 import ReportAdditionalInformationSection from "./components/ReportAdditionalInformationSection";
+import { additionalInformation } from "./utils/constants";
 
-// page comp -> basic info, additional, images (?)
-// section comp -> report basic info, hospital details, patient details, abnormal findings, normal findings, summary
 const styles = {
     wrapper: {
         backgroundColor: "#052e39",
@@ -36,7 +35,7 @@ function App() {
                     <ReportBasicInfoSection />
                 </ReportPage>
                 <ReportPage>
-                    <ReportSection title="Additional Information">
+                    <ReportSection title={additionalInformation.title}>
                         <ReportAdditionalInformationSection />
                     </ReportSection>
                 </ReportPage>
