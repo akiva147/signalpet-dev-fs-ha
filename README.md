@@ -1,3 +1,7 @@
+### SignalPet Home Assigment
+
+Welcome to the SignalPet Home Assigment project!
+
 ### `npm start`
 
 Runs the app in the development mode.\
