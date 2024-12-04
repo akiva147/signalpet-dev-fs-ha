@@ -1,4 +1,7 @@
+import { useTranslation } from "../contexts/TranslationProvider";
+import { LanguageType } from "../models/translation";
 import { languages, reportHeader } from "../utils/constants";
+import TranslatableText from "./TranslateableText";
 
 const styles = {
   container: {
@@ -18,19 +21,28 @@ const styles = {
 };
 
 const ReportHeader = () => {
+  const { language, setLanguage } = useTranslation();
+
   return (
     <div style={styles.container}>
       <img alt="Logo" src={require("../static/logo.png")} style={styles.logo} />
-      <select name="languages" id="languages" defaultValue={"English"}>
-        {languages.map((language) => (
-          <option key={language} value={language}>
-            {language}
+      <select
+        id="language-selector"
+        onChange={(e) => setLanguage(e.target.value as LanguageType)}
+        value={language}
+      >
+        {languages.map((lang) => (
+          <option key={lang} value={lang}>
+            {lang}
           </option>
         ))}
       </select>
-      <span style={styles.secondaryText} translate="yes">
-        {reportHeader.secondaryText}
-      </span>
+      <TranslatableText
+        id="loadingText"
+        defaultText={reportHeader.secondaryText}
+        style={styles.secondaryText}
+        translate="yes"
+      />
     </div>
   );
 };

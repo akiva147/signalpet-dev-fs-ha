@@ -17,7 +17,7 @@ const styles = {
 const ReportAdditionalInformationSection = () => {
   // TODO: Add translations for all needed components,
   // check maybe to put the cache in the local storage
-  // and add the reasoning for your choices of thecnologies
+  // and add the reasoning for your choices of the tecnologies
   // and why i chose only frontend
   return (
     <div translate="yes">
@@ -26,7 +26,6 @@ const ReportAdditionalInformationSection = () => {
         defaultText={"Summary: "}
         style={styles.title}
       />
-      {/* <span style={styles.title}>Summary: </span> */}
       <InputTag editable={true}>{generateXrayAnalysisSummary()}</InputTag>
     </div>
   );

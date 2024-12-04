@@ -6,9 +6,7 @@ import ReportSection from "./components/ReportSection";
 import ReportBasicInfoSection from "./components/ReportBasicInfoSection";
 import ReportAdditionalInformationSection from "./components/ReportAdditionalInformationSection";
 import { additionalInformation } from "./utils/constants";
-import { TranslationProvider } from "./contexts/TranslationProvider";
-import { TranslateExampleComponent } from "./components/TranslateableExampleText";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { GlobalProvider } from "./contexts/GlobalProvider";
 
 const styles = {
   wrapper: {
@@ -29,28 +27,23 @@ const styles = {
   },
 };
 
-const queryClient = new QueryClient();
-
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TranslationProvider>
-        <div style={styles.wrapper}>
-          <div style={styles.container}>
-            <TranslateExampleComponent />
-            <ReportHeader />
-            <ReportPage>
-              <ReportBasicInfoSection />
-            </ReportPage>
-            <ReportPage>
-              <ReportSection title={additionalInformation.title}>
-                <ReportAdditionalInformationSection />
-              </ReportSection>
-            </ReportPage>
-          </div>
+    <GlobalProvider>
+      <div style={styles.wrapper}>
+        <div style={styles.container}>
+          <ReportHeader />
+          <ReportPage>
+            <ReportBasicInfoSection />
+          </ReportPage>
+          <ReportPage>
+            <ReportSection title={additionalInformation.title}>
+              <ReportAdditionalInformationSection />
+            </ReportSection>
+          </ReportPage>
         </div>
-      </TranslationProvider>
-    </QueryClientProvider>
+      </div>
+    </GlobalProvider>
   );
 }
 

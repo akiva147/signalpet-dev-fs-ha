@@ -1,33 +1,57 @@
-import React from "react";
+// Refactored TranslateableText component
+import React, { useState } from "react";
 import { useTranslation } from "../contexts/TranslationProvider";
 import { useTranslateText } from "../hooks/useTranslateTexts";
 
 type TranslatableTextProps = {
   id: string;
   defaultText: string;
+  elementType?: React.ElementType;
 } & React.HTMLAttributes<HTMLElement>;
 
-const TranslatableText: React.FC<TranslatableTextProps> = ({
+const TranslateableText: React.FC<TranslatableTextProps> = ({
   id,
   defaultText,
+  elementType = "span",
+  ...props
 }) => {
   const { language } = useTranslation();
+  const [value, setValue] = useState(defaultText);
+  const {
+    data: translatedText,
+    isLoading,
+    error,
+  } = useTranslateText(defaultText, language);
 
-  // Use the new hook to fetch the translation for each instance
-  const { data, isLoading, error } = useTranslateText(defaultText, language);
+  const Element = elementType;
 
-  // Loading state
-  if (isLoading) {
-    return <span>Loading...</span>;
+  if (elementType === "textarea") {
+    // Handle <textarea> separately
+    // TODO: decide how to handle the changes
+    // in the textarea text
+    const value = isLoading
+      ? "Loading..."
+      : error
+      ? "Error fetching translation"
+      : translatedText || defaultText;
+
+    console.log("🚀 ~ value:", value);
+    return (
+      <textarea
+        {...props}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    );
   }
 
-  // Error handling for failed translation fetch
-  if (error) {
-    return <span>Error fetching translation</span>;
-  }
-
-  // If translation is not available, fallback to the default text
-  return <span>{data || defaultText}</span>;
+  return (
+    <Element {...props}>
+      {isLoading && "Loading..."}
+      {error && "Error fetching translation"}
+      {!isLoading && !error && (translatedText || defaultText)}
+    </Element>
+  );
 };
 
-export default TranslatableText;
+export default TranslateableText;
