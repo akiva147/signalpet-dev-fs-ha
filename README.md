@@ -39,3 +39,8 @@ As you can see from the code in the various branches. first i wanted to implemen
 After that i started to implement the solution without i18next since i wa not fdamiliar with the library, and i looked up the internet to check what it the most affactive approach to my case.
 
 In the middle of the project i found out about i18next, so i tried to implement it, but saw no significant difference, and it resulted in more code, so i swiched back to the without-i18next approach, and finished the project.
+
+Other suggestions are: using vite instead of create-react-app, loading all the translation together, which is related to the request baching feature.
+
+About the second point in the Reuirements in the explenation: _Receive as an input the output language code. (The source language will always be
+English)_. i did not quite well understood it, so a implemented select in order to choose which language the website will be presented as.
