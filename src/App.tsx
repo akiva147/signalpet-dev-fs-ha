@@ -29,6 +29,7 @@ const styles = {
 
 function App() {
   return (
+    // created the global provider to put all the providers in one place
     <GlobalProvider>
       <div style={styles.wrapper}>
         <div style={styles.container}>

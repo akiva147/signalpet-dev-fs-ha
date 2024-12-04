@@ -20,6 +20,8 @@ export interface GlobalProviderProps {
   children?: React.ReactNode;
 }
 
+// added a presistence query client provider to save the queries in the local storage
+// to save the translation results to decrease the number of requests
 export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => (
   <PersistQueryClientProvider
     client={queryClient}

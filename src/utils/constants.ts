@@ -19,6 +19,8 @@ export const additionalInformation = {
   title: "Additional Information",
 };
 
+// created list for supported languages and another one for their initials
+// to dispaly the full name in the ui and query with the initials
 export const languages = [
   "German",
   "Spanish",

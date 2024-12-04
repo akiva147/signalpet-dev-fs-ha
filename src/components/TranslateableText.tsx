@@ -1,5 +1,4 @@
-// Refactored TranslateableText component
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "../contexts/TranslationProvider";
 import { useTranslateText } from "../hooks/useTranslateTexts";
 
@@ -21,30 +20,30 @@ const TranslateableText: React.FC<TranslatableTextProps> = ({
     data: translatedText,
     isLoading,
     error,
-  } = useTranslateText(defaultText, language);
+  } = useTranslateText(value, language);
+
+  // used to memoize the value of the translated text for textarea
+  const memoValue = useMemo(() => {
+    if (isLoading) return "Loading...";
+    if (error) return "Error fetching translation";
+    if (translatedText) return translatedText;
+    return value;
+  }, [translatedText, isLoading, error, value]);
 
   const Element = elementType;
 
   if (elementType === "textarea") {
-    // Handle <textarea> separately
-    // TODO: decide how to handle the changes
-    // in the textarea text
-    const value = isLoading
-      ? "Loading..."
-      : error
-      ? "Error fetching translation"
-      : translatedText || defaultText;
-
-    console.log("🚀 ~ value:", value);
     return (
       <textarea
         {...props}
-        value={value}
+        value={memoValue}
         onChange={(e) => setValue(e.target.value)}
       />
     );
   }
 
+  // instead of using only span, use can chose an
+  // element type that suits the use case
   return (
     <Element {...props}>
       {isLoading && "Loading..."}

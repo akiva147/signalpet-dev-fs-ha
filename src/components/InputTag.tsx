@@ -59,14 +59,6 @@ const InputTag = (props: InputTagInterface) => {
       translate="yes"
     />
   ) : (
-    // <textarea
-    //     style={{
-    //         ...styles.tagContainer,
-    //         ...styles.editableContainer,
-    //         ...style,
-    //     }}
-    //     defaultValue={children?.toString()}
-    // ></textarea>
     <TranslateableText
       id="loadingText"
       defaultText={children?.toString() ?? ""}
@@ -74,10 +66,6 @@ const InputTag = (props: InputTagInterface) => {
       style={{ ...styles.tagContainer, ...style }}
       translate="yes"
     />
-    // <div style={{ ...styles.tagContainer, ...style }}>
-    //     {icon}
-    //     <span style={styles.tagText}>{children}</span>
-    // </div>
   );
 };
 
